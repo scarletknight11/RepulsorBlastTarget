@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour {
 
 	//private float currentTime;
 
+	public GameObject wincanvas;
+
 	// setup the game
 	void Start () {
 
@@ -49,14 +51,14 @@ public class GameManager : MonoBehaviour {
 		if (gameOverScoreOutline)
 			gameOverScoreOutline.SetActive (false);
 
-		// inactivate the playAgainButtons gameObject, if it is set
-		//if (playAgainButtons)
-		//	playAgainButtons.SetActive (false);
+        // inactivate the playAgainButtons gameObject, if it is set
+        //if (playAgainButtons)
+        //	playAgainButtons.SetActive (false);
 
-		// inactivate the nextLevelButtons gameObject, if it is set
-		//if (nextLevelButtons)
-		//	nextLevelButtons.SetActive (false);
-	}
+        // inactivate the nextLevelButtons gameObject, if it is set
+        if (wincanvas)
+			wincanvas.SetActive(false);
+    }
 
 	// this is the main game event loop
 	void Update () {
@@ -104,9 +106,9 @@ public class GameManager : MonoBehaviour {
 			gameOverScoreOutline.SetActive (true);
 
 		// activate the nextLevelButtons gameObject, if it is set 
-		//if (nextLevelButtons)
-		//	nextLevelButtons.SetActive (true);
-		
+		if (wincanvas)
+			wincanvas.SetActive(true);
+
 		// reduce the pitch of the background music, if it is set 
 		if (musicAudioSource)
 			musicAudioSource.pitch = 0.5f; // slow down the music
