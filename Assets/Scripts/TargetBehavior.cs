@@ -23,9 +23,8 @@ public class TargetBehavior : MonoBehaviour {
 				{
 					// Instantiate an explosion effect at the gameObjects position and rotation
 					Instantiate(explosionPrefab, transform.position, transform.rotation);
-				}
-		}
- 
+				}  
+			}
 	 
 		// if game manager exists, make adjustments based on target properties
 		if (GameManager.gm) {
