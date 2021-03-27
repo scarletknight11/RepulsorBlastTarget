@@ -4,31 +4,28 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public int scoreAmount = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void PrintInfo()
-    {
-        print(this);
-    }
+	// when collided with another gameObject
+	void OnCollisionEnter(Collision newCollision)
+	{
+		// exit if there is a game manager and the game is over
+		if (GameManager.gm)
+		{
+			if (GameManager.gm.gameIsOver)
+				return;
+		}
 
-    public void DestroyWrapper()
-    {
-        Destroy(this.gameObject);
-    }
+		// only do stuff if hit by a projectile
+		if (newCollision.gameObject.tag == "Projectile")
+		{
+			GameManager.gm.targetMiss(scoreAmount);
+			//GameManager.gm.ScoreReset();
 
-    //Function called by OnGraspEnd
-    public void StartDestroyCountdown()
-    {
-        Invoke("DestroyWarpper", 3);
-    }
+		}
+		 
+
+
+	}
 }

@@ -5,7 +5,7 @@ public class TargetBehavior : MonoBehaviour {
 
 	// target impact on game
 	public int scoreAmount = 0;
-
+ 
 	// explosion when hit?
 	public GameObject explosionPrefab;
 
@@ -17,15 +17,18 @@ public class TargetBehavior : MonoBehaviour {
 				return;
 		}
 
-		// only do stuff if hit by a projectile
-		if (newCollision.gameObject.tag == "Projectile") {
-			if (explosionPrefab) {
-				// Instantiate an explosion effect at the gameObjects position and rotation
-				Instantiate (explosionPrefab, transform.position, transform.rotation);
-			}
-
-			// if game manager exists, make adjustments based on target properties
-			if (GameManager.gm) {
+ 			if (newCollision.gameObject.tag == "Projectile")
+			{
+				if (explosionPrefab)
+				{
+					// Instantiate an explosion effect at the gameObjects position and rotation
+					Instantiate(explosionPrefab, transform.position, transform.rotation);
+				}
+		}
+ 
+	 
+		// if game manager exists, make adjustments based on target properties
+		if (GameManager.gm) {
 				GameManager.gm.targetHit(scoreAmount);
 			}
 				
@@ -36,4 +39,4 @@ public class TargetBehavior : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
-}
+

@@ -120,18 +120,21 @@ public class GameManager : MonoBehaviour {
 		// increase the score by the scoreAmount and update the text UI
 		score += scoreAmount;
 		mainScoreDisplay.text = score.ToString ();
-		
-		// increase the time by the timeAmount
-		//currentTime += timeAmount;
-		
-		// don't let it go negative
-		//if (currentTime < 0)
-		//	currentTime = 0.0f;
-
-		// update the text UI
-		//mainTimerDisplay.text = currentTime.ToString ("0.00");
 	}
 
+	public void targetMiss(int scoreAmount)
+	{
+		// decrease the score by the scoreAmount and update the text UI
+		score -= scoreAmount;
+		mainScoreDisplay.text = score.ToString();
+		if (score <= 0)
+		{
+			score = 0;
+			mainScoreDisplay.text = score.ToString();
+		}
+	}
+
+	 
 	// public function that can be called to restart the game
 	public void RestartGame ()
 	{
