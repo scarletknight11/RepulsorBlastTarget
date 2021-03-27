@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject wincanvas;
 
+	public int hitcounter;
+
 	// setup the game
 	void Start () {
 
@@ -118,6 +120,13 @@ public class GameManager : MonoBehaviour {
 	public void targetHit (int scoreAmount)
 	{
 		// increase the score by the scoreAmount and update the text UI
+		hitcounter += 1;
+		Debug.Log("Hitcounter " + hitcounter);
+		if (hitcounter == 3)
+        {
+			hitcounter = 0;
+			BonusHit();
+		}
 		score += scoreAmount;
 		mainScoreDisplay.text = score.ToString ();
 	}
@@ -126,6 +135,8 @@ public class GameManager : MonoBehaviour {
 	{
 		// decrease the score by the scoreAmount and update the text UI
 		score -= scoreAmount;
+		hitcounter = 0;
+		Debug.Log("Hitcounter " + hitcounter);
 		mainScoreDisplay.text = score.ToString();
 		if (score <= 0)
 		{
@@ -134,7 +145,14 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	 
+	public void BonusHit()
+	{
+		// increase the score by the scoreAmount and update the text UI
+		score += 3;
+		mainScoreDisplay.text = score.ToString();
+	}
+
+
 	// public function that can be called to restart the game
 	public void RestartGame ()
 	{
