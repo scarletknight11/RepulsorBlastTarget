@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grenade : MonoBehaviour
-{
+public class Grenade : MonoBehaviour {
 	public int scoreAmount = 0;
-
 
 	// when collided with another gameObject
 	void OnCollisionEnter(Collision newCollision)
@@ -22,10 +20,6 @@ public class Grenade : MonoBehaviour
 		{
 			GameManager.gm.targetMiss(scoreAmount);
 			//GameManager.gm.ScoreReset();
-
 		}
-		 
-
-
 	}
 }

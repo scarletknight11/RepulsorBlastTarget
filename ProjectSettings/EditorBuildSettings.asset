@@ -4,7 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FPS.unity
+    guid: 29e6adf06e764934f8bd5db5e90f0cfb
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 38c579328bd51ae4991da92e7c4e3c83,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: f038304c0bc8dcc42b4ab3ce109511ba,
       type: 2}

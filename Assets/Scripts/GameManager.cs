@@ -106,15 +106,15 @@ public class GameManager : MonoBehaviour {
 	public void targetMiss(int scoreAmount)
 	{
 		// decrease the score by the scoreAmount and update the text UI
-		score -= scoreAmount;
+		//score -= scoreAmount;
 		hitcounter = 0;
 		Debug.Log("Hitcounter " + hitcounter);
-		mainScoreDisplay.text = score.ToString();
-		if (score <= 0)
-		{
-			score = 0;
-			mainScoreDisplay.text = score.ToString();
-		}
+		//mainScoreDisplay.text = score.ToString();
+		//if (score <= 0)
+		//{
+		//	score = 0;
+		//	mainScoreDisplay.text = score.ToString();
+		//}
 	}
 
 	public void BonusHit()

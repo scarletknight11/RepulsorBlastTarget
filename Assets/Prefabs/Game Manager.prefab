@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3685475300429714861}
-  - component: {fileID: 3685475300429714860}
+  - component: {fileID: 1338285104}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -27,11 +27,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3685475300429714860
+--- !u!114 &1338285104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,19 +41,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3685475300429714863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d30487acfc0439b99b3ac25524dc69, type: 3}
+  m_Script: {fileID: 11500000, guid: 7212f7e3eac637542ba54c99dc083bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
   canBeatLevel: 1
   beatLevelScore: 50
-  startTime: 15
   mainScoreDisplay: {fileID: 0}
-  mainTimerDisplay: {fileID: 0}
   gameOverScoreOutline: {fileID: 0}
   musicAudioSource: {fileID: 0}
   gameIsOver: 0
-  playAgainButtons: {fileID: 0}
-  playAgainLevelToLoad: Level1
-  nextLevelButtons: {fileID: 0}
-  nextLevelToLoad: Level2
+  wincanvas: {fileID: 0}
+  hitcounter: 0
+  bonusmessage: {fileID: 0}
